@@ -114,7 +114,7 @@ public class LoginActivity extends AbstractAsyncActivity {
 		@Override
 		protected Plan doInBackground(Void... params) {
 			final String url = getString(R.string.base_uri)
-					+ "/rest/plan.do?customerId=68";
+					+ "/rest/login.do";
 			// final String url = getString(R.string.base_uri);
 
 			// Populate the HTTP Basic Authentitcation header with the username
