@@ -136,7 +136,7 @@ public class LoginActivity extends AbstractAsyncActivity {
 				// Make the network request
 				Log.d(TAG, url);
 				ResponseEntity<Plan> response = restTemplate.exchange(url,
-						HttpMethod.GET, new HttpEntity<Object>(requestHeaders),
+						HttpMethod.POST, new HttpEntity<Object>(requestHeaders),
 						Plan.class);
 				return response.getBody();
 			} catch (HttpMessageNotReadableException e) {
