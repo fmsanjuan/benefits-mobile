@@ -1,8 +1,9 @@
 package com.benefits.app;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Comment extends DomainEntity {
+public class Comment extends DomainEntity implements Serializable {
 
 	private Date date;
 	private String content;

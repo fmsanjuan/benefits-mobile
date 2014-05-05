@@ -1,7 +1,9 @@
 package com.benefits.app;
 
 
-public class Exercise extends DomainEntity {
+import java.io.Serializable;
+
+public class Exercise extends DomainEntity implements Serializable {
 
 	private String name;
 	private Integer repetitions;

@@ -41,11 +41,11 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:+'
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile group: 'org.springframework.android', name: 'spring-android-rest-template', version: '1.0.1.RELEASE'
     compile group: 'org.codehaus.jackson', name: 'jackson-mapper-asl', version: '1.9.13'
     compile group: 'org.codehaus.jackson', name: 'jackson-core-asl', version: '1.9.13'
     compile group: 'org.springframework.android', name: 'spring-android-core', version: '1.0.1.RELEASE'
     compile group: 'org.springframework.android', name: 'spring-android-auth', version: '1.0.1.RELEASE'
+    compile 'com.android.support:appcompat-v7:19.+'
 }

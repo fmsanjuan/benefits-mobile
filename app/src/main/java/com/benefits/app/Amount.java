@@ -1,6 +1,8 @@
 package com.benefits.app;
 
-public class Amount extends DomainEntity {
+import java.io.Serializable;
+
+public class Amount extends DomainEntity implements Serializable {
 	private int quantity;
 	private String measure;
 

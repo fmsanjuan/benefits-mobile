@@ -15,6 +15,7 @@ import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.ResourceAccessException;
 import org.springframework.web.client.RestTemplate;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -135,10 +136,11 @@ public class LoginActivity extends AbstractAsyncActivity {
 			try {
 				// Make the network request
 				Log.d(TAG, url);
-				ResponseEntity<Plan> response = restTemplate.exchange(url,
+                ResponseEntity<Plan> response = restTemplate.exchange(url,
 						HttpMethod.POST, new HttpEntity<Object>(requestHeaders),
 						Plan.class);
-				return response.getBody();
+                return response.getBody();
+
 			} catch (HttpMessageNotReadableException e) {
 				Log.e(TAG, e.getLocalizedMessage(), e);
 				return new Plan();
@@ -149,13 +151,28 @@ public class LoginActivity extends AbstractAsyncActivity {
 				Log.e(TAG, e.getLocalizedMessage(), e);
 				return new Plan();
 			}
+
 		}
 
 		@Override
 		protected void onPostExecute(Plan result) {
-			dismissProgressDialog();
-			displayResponse(result);
+//			dismissProgressDialog();
+//			displayResponse(result);
+
+            if(result.getId() == 0){
+                onCancelled();
+            }
+            else {
+                Intent intent = new Intent(LoginActivity.this, SelectActivity.class);
+                intent.putExtra("plan", result);
+                startActivity(intent);
+            }
 		}
+
+        @Override
+        protected void onCancelled() {
+            Toast.makeText(LoginActivity.this, "Tarea cancelada!", Toast.LENGTH_SHORT).show();
+        }
 
 	}
 

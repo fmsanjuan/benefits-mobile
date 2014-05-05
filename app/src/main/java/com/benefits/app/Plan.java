@@ -1,9 +1,11 @@
 package com.benefits.app;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class Plan extends DomainEntity {
+@SuppressWarnings("serial")
+public class Plan extends DomainEntity implements Serializable{
 
     private Goals goal;
 

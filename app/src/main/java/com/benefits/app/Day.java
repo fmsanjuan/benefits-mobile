@@ -1,9 +1,10 @@
 package com.benefits.app;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class Day extends DomainEntity {
+public class Day extends DomainEntity implements Serializable{
 
 	private Days name;
 

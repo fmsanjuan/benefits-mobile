@@ -1,9 +1,10 @@
 package com.benefits.app;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class ExerciseGroup extends DomainEntity {
+public class ExerciseGroup extends DomainEntity implements Serializable {
 
 	private String name;
 

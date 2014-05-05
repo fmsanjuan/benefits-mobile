@@ -1,0 +1,45 @@
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_weight="3"
+        android:gravity="center"
+        android:layout_height="fill_parent"
+        android:id="@+id/linearLayout">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/title_select"
+            android:id="@+id/textView" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_weight="1"
+        android:layout_height="fill_parent">
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:src="@drawable/training"
+            android:id="@+id/imageDiet" />
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:src="@drawable/diet"
+            android:id="@+id/imageTraining" />
+    </LinearLayout>
+
+</LinearLayout>

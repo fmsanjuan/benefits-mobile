@@ -1,9 +1,10 @@
 package com.benefits.app;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class Diet extends DomainEntity {
+public class Diet extends DomainEntity implements Serializable{
 
 	private String name;
 	private String description;
