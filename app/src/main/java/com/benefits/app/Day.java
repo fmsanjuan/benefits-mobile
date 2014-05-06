@@ -4,12 +4,15 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class Day extends DomainEntity implements Serializable{
+import org.codehaus.jackson.annotate.JsonIgnore;
+
+
+public class Day extends DomainEntity implements Serializable {
 
 	private Days name;
 
 	// relationship
-	private Diet diet;
+	private Collection<Diet> diets;
 	private Collection<Meal> meals;
 
 	public Day() {
@@ -25,12 +28,13 @@ public class Day extends DomainEntity implements Serializable{
 		this.name = name;
 	}
 
-	public Diet getDiet() {
-		return diet;
+	@JsonIgnore
+	public Collection<Diet> getDiets() {
+		return diets;
 	}
 
-	public void setDiet(Diet diet) {
-		this.diet = diet;
+	public void setDiets(Collection<Diet> diets) {
+		this.diets = diets;
 	}
 
 	public Collection<Meal> getMeals() {

@@ -4,7 +4,9 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class Diet extends DomainEntity implements Serializable{
+import org.codehaus.jackson.annotate.JsonIgnore;
+
+public class Diet extends DomainEntity implements Serializable {
 
 	private String name;
 	private String description;
@@ -38,6 +40,7 @@ public class Diet extends DomainEntity implements Serializable{
 		this.description = description;
 	}
 
+	@JsonIgnore
 	public Collection<Plan> getPlans() {
 		return plans;
 	}
@@ -54,6 +57,7 @@ public class Diet extends DomainEntity implements Serializable{
 		this.days = days;
 	}
 
+	@JsonIgnore
 	public Sponsor getSponsor() {
 		return sponsor;
 	}

@@ -1,7 +1,10 @@
 package com.benefits.app;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
 
-public class Issue extends DomainEntity {
+import java.io.Serializable;
+
+public class Issue extends DomainEntity implements Serializable {
 
 	private String description;
 
@@ -29,6 +32,7 @@ public class Issue extends DomainEntity {
 		this.customer = customer;
 	}
 
+	@JsonIgnore
 	public Plan getPlan() {
 		return plan;
 	}

@@ -1,16 +1,19 @@
 package com.benefits.app;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class Customer extends User {
+import org.codehaus.jackson.annotate.JsonIgnore;
 
-	private double weight;
-	private double height;
-	private double bodyfat;
-	private double waistlineMeasure;
-	private double hipMeasure;
-	private double chestMeasure;
+public class Customer extends User implements Serializable {
+
+	private Double weight;
+	private Double height;
+	private Double bodyfat;
+	private Double waistlineMeasure;
+	private Double hipMeasure;
+	private Double chestMeasure;
 
 	// RelationShip
 	private Plan plan;
@@ -21,7 +24,7 @@ public class Customer extends User {
 		issues = new ArrayList<Issue>();
 	}
 
-	public double getWeight() {
+	public Double getWeight() {
 		return weight;
 	}
 
@@ -29,7 +32,7 @@ public class Customer extends User {
 		this.weight = weight;
 	}
 
-	public double getHeight() {
+	public Double getHeight() {
 		return height;
 	}
 
@@ -37,7 +40,7 @@ public class Customer extends User {
 		this.height = height;
 	}
 
-	public double getBodyfat() {
+	public Double getBodyfat() {
 		return bodyfat;
 	}
 
@@ -45,7 +48,8 @@ public class Customer extends User {
 		this.bodyfat = bodyfat;
 	}
 
-	public double getWaistlineMeasure() {
+
+	public Double getWaistlineMeasure() {
 		return waistlineMeasure;
 	}
 
@@ -53,7 +57,8 @@ public class Customer extends User {
 		this.waistlineMeasure = waistlineMeasure;
 	}
 
-	public double getHipMeasure() {
+
+	public Double getHipMeasure() {
 		return hipMeasure;
 	}
 
@@ -61,7 +66,8 @@ public class Customer extends User {
 		this.hipMeasure = hipMeasure;
 	}
 
-	public double getChestMeasure() {
+
+	public Double getChestMeasure() {
 		return chestMeasure;
 	}
 
@@ -77,6 +83,7 @@ public class Customer extends User {
 		this.plan = plan;
 	}
 
+	@JsonIgnore
 	public Collection<Issue> getIssues() {
 		return issues;
 	}

@@ -1,9 +1,12 @@
 package com.benefits.app;
 
+
+import org.codehaus.jackson.annotate.JsonIgnore;
+
 import java.io.Serializable;
 
-public class Amount extends DomainEntity implements Serializable {
-	private int quantity;
+public class Amount extends DomainEntity implements Serializable{
+	private Integer quantity;
 	private String measure;
 
 	// relationship
@@ -15,13 +18,15 @@ public class Amount extends DomainEntity implements Serializable {
 		super();
 	}
 
-	public int getQuantity() {
+
+	public Integer getQuantity() {
 		return quantity;
 	}
 
-	public void setQuantity(int quantity) {
+	public void setQuantity(Integer quantity) {
 		this.quantity = quantity;
 	}
+
 
 	public String getMeasure() {
 		return measure;
@@ -31,6 +36,7 @@ public class Amount extends DomainEntity implements Serializable {
 		this.measure = measure;
 	}
 
+	@JsonIgnore
 	public Meal getMeal() {
 		return meal;
 	}

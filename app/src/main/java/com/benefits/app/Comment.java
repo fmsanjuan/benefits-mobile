@@ -3,6 +3,8 @@ package com.benefits.app;
 import java.io.Serializable;
 import java.util.Date;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
+
 public class Comment extends DomainEntity implements Serializable {
 
 	private Date date;
@@ -40,6 +42,7 @@ public class Comment extends DomainEntity implements Serializable {
 		this.user = user;
 	}
 
+	@JsonIgnore
 	public Plan getPlan() {
 		return plan;
 	}

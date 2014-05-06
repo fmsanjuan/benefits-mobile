@@ -4,10 +4,14 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
+
+
 public class Food extends DomainEntity implements Serializable {
 
 	private String name;
 	private String description;
+	private byte[] image;
 
 	// relationShip
 
@@ -34,6 +38,20 @@ public class Food extends DomainEntity implements Serializable {
 		this.description = description;
 	}
 
+	public byte[] getImage() {
+		return image;
+	}
+
+	public void setImage(byte[] image) {
+		this.image = image;
+	}
+
+    @JsonIgnore
+	public boolean getValidImage() {
+		return !(this.getImage() == null || this.getImage().length == 0);
+	}
+
+	@JsonIgnore
 	public Collection<Amount> getAmounts() {
 		return amounts;
 	}

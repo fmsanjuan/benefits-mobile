@@ -1,9 +1,14 @@
 package com.benefits.app;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public abstract class User extends DomainEntity {
+
+
+import org.codehaus.jackson.annotate.JsonIgnore;
+
+public abstract class User extends DomainEntity implements Serializable {
 	private String name;
 	private String surname;
 	private String email;
@@ -58,6 +63,7 @@ public abstract class User extends DomainEntity {
 		this.city = city;
 	}
 
+	@JsonIgnore
 	public Collection<Comment> getComments() {
 		return comments;
 	}

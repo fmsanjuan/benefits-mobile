@@ -4,10 +4,13 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
+
 public class Training extends DomainEntity implements Serializable {
 
 	private String name;
 	private int duration;
+	private String description;
 
 	// Relationship
 	private Collection<Plan> plans;
@@ -37,6 +40,15 @@ public class Training extends DomainEntity implements Serializable {
 		this.duration = duration;
 	}
 
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	@JsonIgnore
 	public Collection<Plan> getPlans() {
 		return plans;
 	}
@@ -53,6 +65,7 @@ public class Training extends DomainEntity implements Serializable {
 		this.trainingDays = trainingDays;
 	}
 
+	@JsonIgnore
 	public Sponsor getSponsor() {
 		return sponsor;
 	}
