@@ -44,6 +44,11 @@ public class AdapterAmountList extends BaseAdapter {
         return view;
     }
 
+    @Override
+    public boolean isEnabled(int position) {
+        return false;
+    }
+
     public int getCount() {
         return amounts.size();
     }
