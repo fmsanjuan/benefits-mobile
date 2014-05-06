@@ -14,5 +14,14 @@
     <string name="training">Entrenamiento</string>
     <string name="title_activity_diet">DietActivity</string>
     <string name="title_activity_training">TrainingActivity</string>
+    <string name="days">Days</string>
+    <string name="noDays">There is no days to show</string>
+    <string name="meals">Meals</string>
+    <string name="noMeals">There is no meals to show</string>
+    <string name="amounts">Food and Amounts</string>
+    <string name="noAmounts">There is no amounts to show</string>
+    <string name="back">Back</string>
+    <string name="title_activity_day_details">DayDetailsActivity</string>
+    <string name="title_activity_meal_details">MealDetailsActivity</string>
 
 </resources>

@@ -1,41 +1,56 @@
 package com.benefits.app;
 
-import android.support.v7.app.ActionBarActivity;
+import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Vector;
 
 
-public class DietActivity extends ActionBarActivity {
+public class DietActivity extends ListActivity {
 
-    private Diet diet;
+    private List<Day> daysList = new ArrayList<Day>();
+
+    private Button back;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_diet);
 
-        diet = (Diet)getIntent().getExtras().getSerializable("diet");
+        Diet diet = (Diet) getIntent().getExtras().get("diet");
+        daysList.addAll(diet.getDays());
+
+        getListView().setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView parent, View v, int position,
+                                    long id) {
+
+                Day entry = (Day) parent.getItemAtPosition(position);
+                Intent i = new Intent(DietActivity.this,
+                        DayDetailsActivity.class);
+                i.putExtra("day", entry);
+                startActivity(i);
+
+            };
+        });
+        Vector<Day> dayListToIndex = new Vector<Day>(daysList);
+        setListAdapter(new AdapterDayList(DietActivity.this, dayListToIndex));
+
+        back = (Button) findViewById(R.id.backToSelectFromDiet);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
 
     }
 
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.diet, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
 }

@@ -20,9 +20,9 @@ public class SelectActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select);
 
-        plan = (Plan)getIntent().getExtras().getSerializable("plan");
-        imageTraining = (ImageView)findViewById(R.id.imageTraining);
-        imageDiet = (ImageView)findViewById(R.id.imageDiet);
+        plan = (Plan) getIntent().getExtras().getSerializable("plan");
+        imageTraining = (ImageView) findViewById(R.id.imageTraining);
+        imageDiet = (ImageView) findViewById(R.id.imageDiet);
 
         imageTraining.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,8 +37,8 @@ public class SelectActivity extends ActionBarActivity {
         imageDiet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(SelectActivity.this, "Diet!", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(SelectActivity.this, SelectActivity.class);
+                //Toast.makeText(SelectActivity.this, "Diet!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(SelectActivity.this, DietActivity.class);
                 intent.putExtra("diet", plan.getDiet());
                 startActivity(intent);
             }

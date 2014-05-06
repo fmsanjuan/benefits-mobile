@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="?android:attr/listPreferredItemHeight">
+
+    <TextView android:id="@+id/day"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:singleLine="true" />
+    <!-- Por si se cambia el dominio y se pone un nombre para los dias
+
+    <TextView android:id="@+id/dayName"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:text="Otro Texto"-->
+        <!--android:layout_below="@id/day"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:gravity="center"/>-->
+</RelativeLayout>

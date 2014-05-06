@@ -28,18 +28,18 @@
         android:layout_height="fill_parent">
 
         <ImageView
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:src="@drawable/training"
-            android:id="@+id/imageDiet" />
+            android:id="@+id/imageTraining" />
 
         <ImageView
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:src="@drawable/diet"
-            android:id="@+id/imageTraining" />
+            android:id="@+id/imageDiet" />
     </LinearLayout>
 
 </LinearLayout>
