@@ -1,16 +1,15 @@
-<LinearLayout
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical">
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical" >
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="fill_parent"
-        android:layout_weight="3"
-        android:gravity="center"
-        android:layout_height="fill_parent"
-        android:id="@+id/linearLayout">
+    <TableRow
+        android:id="@+id/row1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="fill_horizontal" >
 
         <TextView
             android:layout_width="wrap_content"
@@ -19,27 +18,52 @@
             android:text="@string/title_select"
             android:id="@+id/textView" />
 
-    </LinearLayout>
+    </TableRow>
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="fill_parent"
-        android:layout_weight="1"
-        android:layout_height="fill_parent">
+    <TableRow
+        android:id="@+id/row2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
 
         <ImageView
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:adjustViewBounds= "true"
+            android:scaleType="fitXY"
             android:src="@drawable/training"
             android:id="@+id/imageTraining" />
 
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/row3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
         <ImageView
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:adjustViewBounds= "true"
+            android:scaleType="fitXY"
             android:src="@drawable/diet"
             android:id="@+id/imageDiet" />
-    </LinearLayout>
+    </TableRow>
 
-</LinearLayout>
+    <TableRow
+        android:id="@+id/row4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/quit"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/back" />
+    </TableRow>
+
+</TableLayout>

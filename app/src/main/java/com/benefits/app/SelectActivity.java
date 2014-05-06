@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -14,6 +15,7 @@ public class SelectActivity extends ActionBarActivity {
 
     private Plan plan;
     private ImageView imageTraining, imageDiet;
+    private Button back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +43,14 @@ public class SelectActivity extends ActionBarActivity {
                 Intent intent = new Intent(SelectActivity.this, DietActivity.class);
                 intent.putExtra("diet", plan.getDiet());
                 startActivity(intent);
+            }
+        });
+
+        back = (Button) findViewById(R.id.quit);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
 
