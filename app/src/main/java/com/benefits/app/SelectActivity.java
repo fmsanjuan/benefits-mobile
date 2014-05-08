@@ -1,8 +1,8 @@
 package com.benefits.app;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -29,8 +29,8 @@ public class SelectActivity extends ActionBarActivity {
         imageTraining.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(SelectActivity.this, "Training!", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(SelectActivity.this, SelectActivity.class);
+                //Toast.makeText(SelectActivity.this, "Training!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(SelectActivity.this, TrainingActivity.class);
                 intent.putExtra("training", plan.getTraining());
                 startActivity(intent);
             }

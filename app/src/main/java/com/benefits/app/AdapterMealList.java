@@ -9,9 +9,7 @@ import android.widget.TextView;
 
 import java.util.Vector;
 
-/**
- * Created by Jesus on 06/05/2014.
- */
+
 public class AdapterMealList extends BaseAdapter {
     private final Activity activity;
     private final Vector<Meal> mealList;

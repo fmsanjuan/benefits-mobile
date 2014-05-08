@@ -19,10 +19,7 @@ package com.benefits.app;
 import android.app.Activity;
 import android.app.ProgressDialog;
 
-/**
- * @author Roy Clarkson
- * @author Pierre-Yves Ricau
- */
+
 public abstract class AbstractAsyncActivity extends Activity {
 
 	protected static final String TAG = AbstractAsyncActivity.class

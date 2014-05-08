@@ -7,7 +7,7 @@
     <string name="username">Username:</string>
     <string name="password">Password:</string>
     <string name="submit">Submit</string>
-    <string name="base_uri">http://192.168.1.18/benefits</string>
+    <string name="base_uri">http://192.168.0.122/benefits</string>
     <string name="title_activity_select">selectActivity</string>
     <string name="title_select">Seleccione que desea ver</string>
     <string name="diet">Dieta</string>
@@ -15,6 +15,8 @@
     <string name="title_activity_diet">DietActivity</string>
     <string name="title_activity_training">TrainingActivity</string>
     <string name="days">Days</string>
+    <string name="exercise">Exercise</string>
+    <string name="exerciseGroup">ExerciseGroup</string>
     <string name="noDays">There is no days to show</string>
     <string name="meals">Meals</string>
     <string name="noMeals">There is no meals to show</string>
@@ -23,5 +25,7 @@
     <string name="back">Back</string>
     <string name="title_activity_day_details">DayDetailsActivity</string>
     <string name="title_activity_meal_details">MealDetailsActivity</string>
+    <string name="title_activity_training_day_details">TrainingDayDetailsActivity</string>
+    <string name="title_activity_exercise_group_details_activity">ExerciseGroupDetailsActivity</string>
 
 </resources>

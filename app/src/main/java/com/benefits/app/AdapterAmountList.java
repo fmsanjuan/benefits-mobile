@@ -13,9 +13,7 @@ import android.widget.TextView;
 
 import java.util.Vector;
 
-/**
- * Created by Jesus on 06/05/2014.
- */
+
 public class AdapterAmountList extends BaseAdapter {
     private final Activity activity;
     private final Vector<Amount> amounts;

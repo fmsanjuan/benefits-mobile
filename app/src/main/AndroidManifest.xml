@@ -38,6 +38,14 @@
             android:name="com.benefits.app.MealDetailsActivity"
             android:label="@string/title_activity_meal_details" >
         </activity>
+        <activity
+            android:name="com.benefits.app.TrainingDayDetailsActivity"
+            android:label="@string/title_activity_training_day_details" >
+        </activity>
+        <activity
+            android:name=".ExerciseGroupDetailsActivity"
+            android:label="@string/title_activity_exercise_group_details_activity" >
+        </activity>
     </application>
 
 </manifest>

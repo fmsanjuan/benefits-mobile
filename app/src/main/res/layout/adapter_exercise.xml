@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="?android:attr/listPreferredItemHeight">
+
+    <ImageView android:id="@+id/imagePlay"
+        android:layout_width="?android:attr/listPreferredItemHeight"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"/>
+    <TextView android:id="@+id/exercise"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/imagePlay"
+        android:layout_alignParentTop="true"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:singleLine="true" />
+    <TextView android:id="@+id/descriptionExercise"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@id/imagePlay"
+        android:layout_below="@id/exercise"
+        android:gravity="left"/>
+    <TextView android:id="@+id/cyclesrepetitions"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@id/imagePlay"
+        android:layout_below="@id/descriptionExercise"
+        android:layout_alignParentBottom="true"
+        android:gravity="right"/>
+
+</RelativeLayout>
