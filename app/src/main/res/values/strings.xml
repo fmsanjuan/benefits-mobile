@@ -7,7 +7,7 @@
     <string name="username">Username:</string>
     <string name="password">Password:</string>
     <string name="submit">Submit</string>
-    <string name="base_uri">http://192.168.0.122/benefits</string>
+    <string name="base_uri">http://192.168.1.18/benefits</string>
     <string name="title_activity_select">selectActivity</string>
     <string name="title_select">Seleccione que desea ver</string>
     <string name="diet">Dieta</string>
