@@ -4,8 +4,7 @@
     <string name="app_name">Benefits</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="username">Username:</string>
-    <string name="password">Password:</string>
+    <string name="login">LOGIN</string>
     <string name="submit">Submit</string>
     <string name="base_uri">http://192.168.0.122/benefits</string>
     <string name="title_activity_select">selectActivity</string>

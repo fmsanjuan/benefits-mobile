@@ -1,60 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical" >
-
-    <TableRow
-        android:id="@+id/row1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="fill_horizontal" >
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/title_select"
-            android:id="@+id/textView" />
-
-    </TableRow>
-
-    <TableRow
-        android:id="@+id/row2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_centerVertical="true"
+    android:orientation="vertical">
 
         <ImageView
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:adjustViewBounds= "true"
-            android:scaleType="fitXY"
+            android:id="@+id/imageView"
+            android:src="@drawable/logo"/>
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight="1">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:src="@drawable/training"
             android:id="@+id/imageTraining" />
 
-    </TableRow>
+        </LinearLayout>
 
-    <TableRow
-        android:id="@+id/row3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight="1">
+
 
         <ImageView
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:adjustViewBounds= "true"
-            android:scaleType="fitXY"
             android:src="@drawable/diet"
             android:id="@+id/imageDiet" />
-    </TableRow>
 
-    <TableRow
-        android:id="@+id/row4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
+        </LinearLayout>
+</LinearLayout>
+
 
         <Button
             android:id="@+id/quit"
@@ -64,6 +59,6 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="@string/back" />
-    </TableRow>
 
-</TableLayout>
+
+</LinearLayout>
