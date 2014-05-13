@@ -10,8 +10,10 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.benefits.app.LoginActivity"
-            android:label="@string/app_name" >
+            android:name="com.benefits.app.Splash"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,32 +21,52 @@
             </intent-filter>
         </activity>
         <activity
+            android:name="com.benefits.app.LoginActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+        </activity>
+        <activity
             android:name="com.benefits.app.SelectActivity"
-            android:label="@string/title_activity_select" >
+            android:label="@string/title_activity_select"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
         <activity
             android:name="com.benefits.app.DietActivity"
-            android:label="@string/title_activity_diet" >
+            android:label="@string/title_activity_diet"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
         <activity
             android:name="com.benefits.app.TrainingActivity"
-            android:label="@string/title_activity_training" >
+            android:label="@string/title_activity_training"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
         <activity
             android:name="com.benefits.app.DayDetailsActivity"
-            android:label="@string/title_activity_day_details" >
+            android:label="@string/title_activity_day_details"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
         <activity
             android:name="com.benefits.app.MealDetailsActivity"
-            android:label="@string/title_activity_meal_details" >
+            android:label="@string/title_activity_meal_details"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
         <activity
             android:name="com.benefits.app.TrainingDayDetailsActivity"
-            android:label="@string/title_activity_training_day_details" >
+            android:label="@string/title_activity_training_day_details"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
         <activity
             android:name=".ExerciseGroupDetailsActivity"
-            android:label="@string/title_activity_exercise_group_details_activity" >
+            android:label="@string/title_activity_exercise_group_details_activity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
     </application>
 
