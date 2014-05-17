@@ -11,6 +11,7 @@ public class Training extends DomainEntity implements Serializable {
 	private String name;
 	private int duration;
 	private String description;
+	private Language entityLanguage;
 
 	// Relationship
 	private Collection<Plan> plans;
@@ -73,4 +74,13 @@ public class Training extends DomainEntity implements Serializable {
 	public void setSponsor(Sponsor sponsor) {
 		this.sponsor = sponsor;
 	}
+
+	public Language getEntityLanguage() {
+		return entityLanguage;
+	}
+
+	public void setEntityLanguage(Language entityLanguage) {
+		this.entityLanguage = entityLanguage;
+	}
+
 }

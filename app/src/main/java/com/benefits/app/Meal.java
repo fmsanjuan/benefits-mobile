@@ -4,12 +4,15 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 
+
 import org.codehaus.jackson.annotate.JsonIgnore;
+
 
 public class Meal extends DomainEntity implements Serializable {
 
 	private Meals name;
 	private String description;
+	private Language entityLanguage;
 
 	// RelationShip
 	private Collection<Day> days;
@@ -52,6 +55,14 @@ public class Meal extends DomainEntity implements Serializable {
 
 	public void setAmounts(Collection<Amount> amounts) {
 		this.amounts = amounts;
+	}
+
+	public Language getEntityLanguage() {
+		return entityLanguage;
+	}
+
+	public void setEntityLanguage(Language entityLanguage) {
+		this.entityLanguage = entityLanguage;
 	}
 
 }

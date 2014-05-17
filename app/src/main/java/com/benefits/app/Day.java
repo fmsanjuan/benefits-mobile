@@ -6,13 +6,13 @@ import java.util.Collection;
 
 import org.codehaus.jackson.annotate.JsonIgnore;
 
-
 public class Day extends DomainEntity implements Serializable {
 
 	private Days name;
-    private String descriptiveName;
+	private String descriptiveName;
+	private Language entityLanguage;
 
-    // relationship
+	// relationship
 	private Collection<Diet> diets;
 	private Collection<Meal> meals;
 
@@ -29,14 +29,13 @@ public class Day extends DomainEntity implements Serializable {
 		this.name = name;
 	}
 
-    @JsonIgnore
-    public String getDescriptiveName() {
-        return descriptiveName;
-    }
+	public String getDescriptiveName() {
+		return descriptiveName;
+	}
 
-    public void setDescriptiveNameName(String descriptiveName) {
-        this.descriptiveName = descriptiveName;
-    }
+	public void setDescriptiveName(String descriptiveName) {
+		this.descriptiveName = descriptiveName;
+	}
 
 	@JsonIgnore
 	public Collection<Diet> getDiets() {
@@ -53,6 +52,14 @@ public class Day extends DomainEntity implements Serializable {
 
 	public void setMeals(Collection<Meal> meals) {
 		this.meals = meals;
+	}
+
+	public Language getEntityLanguage() {
+		return entityLanguage;
+	}
+
+	public void setEntityLanguage(Language entityLanguage) {
+		this.entityLanguage = entityLanguage;
 	}
 
 }

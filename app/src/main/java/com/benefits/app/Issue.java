@@ -1,5 +1,7 @@
 package com.benefits.app;
 
+
+
 import org.codehaus.jackson.annotate.JsonIgnore;
 
 import java.io.Serializable;
@@ -7,6 +9,8 @@ import java.io.Serializable;
 public class Issue extends DomainEntity implements Serializable {
 
 	private String description;
+
+	private Language entityLanguage;
 
 	// RelationShip
 	private Customer customer;
@@ -22,6 +26,14 @@ public class Issue extends DomainEntity implements Serializable {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public Language getEntityLanguage() {
+		return entityLanguage;
+	}
+
+	public void setEntityLanguage(Language entityLanguage) {
+		this.entityLanguage = entityLanguage;
 	}
 
 	public Customer getCustomer() {

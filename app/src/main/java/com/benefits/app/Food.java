@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 
+
 import org.codehaus.jackson.annotate.JsonIgnore;
 
 
@@ -12,6 +13,7 @@ public class Food extends DomainEntity implements Serializable {
 	private String name;
 	private String description;
 	private byte[] image;
+	private Language entityLanguage;
 
 	// relationShip
 
@@ -58,6 +60,14 @@ public class Food extends DomainEntity implements Serializable {
 
 	public void setAmounts(Collection<Amount> amounts) {
 		this.amounts = amounts;
+	}
+
+	public Language getEntityLanguage() {
+		return entityLanguage;
+	}
+
+	public void setEntityLanguage(Language entityLanguage) {
+		this.entityLanguage = entityLanguage;
 	}
 
 }

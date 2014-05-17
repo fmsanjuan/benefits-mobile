@@ -4,12 +4,14 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 
+
 import org.codehaus.jackson.annotate.JsonIgnore;
 
 public class Diet extends DomainEntity implements Serializable {
 
 	private String name;
 	private String description;
+	private Language entityLanguage;
 
 	// Relationship
 
@@ -64,6 +66,14 @@ public class Diet extends DomainEntity implements Serializable {
 
 	public void setSponsor(Sponsor sponsor) {
 		this.sponsor = sponsor;
+	}
+
+	public Language getEntityLanguage() {
+		return entityLanguage;
+	}
+
+	public void setEntityLanguage(Language entityLanguage) {
+		this.entityLanguage = entityLanguage;
 	}
 
 }

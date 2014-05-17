@@ -1,14 +1,12 @@
 package com.benefits.app;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 
 
-
 import org.codehaus.jackson.annotate.JsonIgnore;
 
-public abstract class User extends DomainEntity implements Serializable {
+public abstract class User extends DomainEntity {
 	private String name;
 	private String surname;
 	private String email;

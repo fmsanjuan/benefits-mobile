@@ -4,8 +4,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import org.codehaus.jackson.annotate.JsonIgnore;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
 
 public class Plan extends DomainEntity implements Serializable {
 
@@ -16,6 +16,7 @@ public class Plan extends DomainEntity implements Serializable {
 	private Double maxWeight;
 	private Double minBodyFat;
 	private Double maxBodyFat;
+	private Language entityLanguage;
 
 	// RelationShip
 	private Collection<Issue> issues;
@@ -67,11 +68,10 @@ public class Plan extends DomainEntity implements Serializable {
 		return maxWeight;
 	}
 
-	
 	public void setMaxWeight(Double maxWeight) {
 		this.maxWeight = maxWeight;
 	}
-	
+
 	public Double getMinBodyFat() {
 		return minBodyFat;
 	}
@@ -129,6 +129,14 @@ public class Plan extends DomainEntity implements Serializable {
 
 	public void setComments(Collection<Comment> comments) {
 		this.comments = comments;
+	}
+
+	public Language getEntityLanguage() {
+		return entityLanguage;
+	}
+
+	public void setEntityLanguage(Language entityLanguage) {
+		this.entityLanguage = entityLanguage;
 	}
 
 }

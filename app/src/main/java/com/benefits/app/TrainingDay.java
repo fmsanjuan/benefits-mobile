@@ -9,7 +9,8 @@ import org.codehaus.jackson.annotate.JsonIgnore;
 public class TrainingDay extends DomainEntity implements Serializable {
 
 	private Days name;
-    private String descriptiveName;
+	private String descriptiveName;
+	private Language entityLanguage;
 
 	// Relationships
 	private Collection<Training> trainings;
@@ -28,14 +29,13 @@ public class TrainingDay extends DomainEntity implements Serializable {
 		this.name = name;
 	}
 
-    @JsonIgnore
-    public String getDescriptiveName() {
-        return descriptiveName;
-    }
+	public String getDescriptiveName() {
+		return descriptiveName;
+	}
 
-    public void setDescriptiveNameName(String descriptiveName) {
-        this.descriptiveName = descriptiveName;
-    }
+	public void setDescriptiveName(String descriptiveName) {
+		this.descriptiveName = descriptiveName;
+	}
 
 	@JsonIgnore
 	public Collection<Training> getTrainings() {
@@ -52,6 +52,14 @@ public class TrainingDay extends DomainEntity implements Serializable {
 
 	public void setExerciseGroups(Collection<ExerciseGroup> exerciseGroups) {
 		this.exerciseGroups = exerciseGroups;
+	}
+
+	public Language getEntityLanguage() {
+		return entityLanguage;
+	}
+
+	public void setEntityLanguage(Language entityLanguage) {
+		this.entityLanguage = entityLanguage;
 	}
 
 }

@@ -3,17 +3,18 @@ package com.benefits.app;
 import java.io.Serializable;
 import java.util.Collection;
 
-
 import org.codehaus.jackson.annotate.JsonIgnore;
+
 
 public class Exercise extends DomainEntity implements Serializable {
 
 	private String name;
-	private Integer repetitions;
+	private String repetitions;
 	private Integer cycles;
 	private String description;
 	private String urlYoutube;
 	private byte[] image;
+	private Language entityLanguage;
 
 	// Relationships
 	private Muscle muscle;
@@ -31,11 +32,19 @@ public class Exercise extends DomainEntity implements Serializable {
 		this.name = name;
 	}
 
-	public Integer getRepetitions() {
+	public Language getEntityLanguage() {
+		return entityLanguage;
+	}
+
+	public void setEntityLanguage(Language entityLanguage) {
+		this.entityLanguage = entityLanguage;
+	}
+
+	public String getRepetitions() {
 		return repetitions;
 	}
 
-	public void setRepetitions(Integer repetitions) {
+	public void setRepetitions(String repetitions) {
 		this.repetitions = repetitions;
 	}
 

@@ -6,6 +6,7 @@ import java.util.Collection;
 
 import org.codehaus.jackson.annotate.JsonIgnore;
 
+
 public class Customer extends User implements Serializable {
 
 	private Double weight;
@@ -48,7 +49,6 @@ public class Customer extends User implements Serializable {
 		this.bodyfat = bodyfat;
 	}
 
-
 	public Double getWaistlineMeasure() {
 		return waistlineMeasure;
 	}
@@ -57,7 +57,6 @@ public class Customer extends User implements Serializable {
 		this.waistlineMeasure = waistlineMeasure;
 	}
 
-
 	public Double getHipMeasure() {
 		return hipMeasure;
 	}
@@ -65,7 +64,6 @@ public class Customer extends User implements Serializable {
 	public void setHipMeasure(double hipMeasure) {
 		this.hipMeasure = hipMeasure;
 	}
-
 
 	public Double getChestMeasure() {
 		return chestMeasure;

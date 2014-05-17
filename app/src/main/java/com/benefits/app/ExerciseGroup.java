@@ -10,6 +10,7 @@ public class ExerciseGroup extends DomainEntity implements Serializable {
 
 	private String name;
 	private String description;
+	private Language entityLanguage;
 
 	// Relationships
 	private Collection<Exercise> exercises;
@@ -35,6 +36,14 @@ public class ExerciseGroup extends DomainEntity implements Serializable {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public Language getEntityLanguage() {
+		return entityLanguage;
+	}
+
+	public void setEntityLanguage(Language entityLanguage) {
+		this.entityLanguage = entityLanguage;
 	}
 
 	public Collection<Exercise> getExercises() {

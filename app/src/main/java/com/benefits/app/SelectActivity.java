@@ -1,5 +1,6 @@
 package com.benefits.app;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -8,7 +9,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 
-public class SelectActivity extends ActionBarActivity {
+public class SelectActivity extends Activity {
 
     private Plan plan;
     private ImageView imageTraining, imageDiet;

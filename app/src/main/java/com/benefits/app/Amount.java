@@ -5,6 +5,7 @@ import org.codehaus.jackson.annotate.JsonIgnore;
 
 import java.io.Serializable;
 
+
 public class Amount extends DomainEntity implements Serializable{
 	private Integer quantity;
 	private String measure;
@@ -18,7 +19,6 @@ public class Amount extends DomainEntity implements Serializable{
 		super();
 	}
 
-
 	public Integer getQuantity() {
 		return quantity;
 	}
@@ -26,7 +26,6 @@ public class Amount extends DomainEntity implements Serializable{
 	public void setQuantity(Integer quantity) {
 		this.quantity = quantity;
 	}
-
 
 	public String getMeasure() {
 		return measure;

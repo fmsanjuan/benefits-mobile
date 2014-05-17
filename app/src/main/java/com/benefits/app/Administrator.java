@@ -14,6 +14,7 @@ public class Administrator extends User implements Serializable{
 		plans = new ArrayList<Plan>();
 	}
 
+
 	public Collection<Plan> getPlans() {
 		return plans;
 	}
