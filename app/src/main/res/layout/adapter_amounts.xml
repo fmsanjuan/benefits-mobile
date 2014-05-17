@@ -11,6 +11,7 @@
     <TextView android:id="@+id/food"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
         android:layout_toRightOf="@id/imageFood"
         android:layout_alignParentTop="true"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -19,6 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_toRightOf="@id/imageFood"
+        android:textColor="@android:color/black"
         android:layout_below="@id/food"
         android:layout_alignParentBottom="true"
         android:gravity="left"/>
@@ -26,6 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_toRightOf="@id/imageFood"
+        android:textColor="@android:color/black"
         android:layout_below="@id/descriptionFood"
         android:layout_alignParentBottom="true"
         android:gravity="right"/>

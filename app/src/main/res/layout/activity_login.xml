@@ -3,8 +3,8 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:layout_centerVertical="true"
-    android:orientation="vertical"
-    android:background="#FFFFFF">
+    android:background="@android:color/white"
+    android:orientation="vertical">
 
     <LinearLayout
         android:orientation="vertical"

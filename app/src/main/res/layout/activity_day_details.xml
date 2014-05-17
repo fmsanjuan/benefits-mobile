@@ -3,6 +3,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:layout_centerVertical="true"
+    android:background="@android:color/white"
     android:orientation="vertical">
 
     <ImageView
@@ -18,6 +19,7 @@
         android:gravity="center"
         android:text="@string/meals"
         android:textSize="25sp"
+        android:textColor="@android:color/black"
         android:textStyle="bold" />
 
     <FrameLayout
@@ -29,6 +31,7 @@
             android:id="@android:id/list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:textColor="@android:color/black"
             android:drawSelectorOnTop="false" />
 
         <TextView
