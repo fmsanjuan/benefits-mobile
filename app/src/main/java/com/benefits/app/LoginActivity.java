@@ -15,10 +15,14 @@ import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.ResourceAccessException;
 import org.springframework.web.client.RestTemplate;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.SpannableString;
+import android.text.method.LinkMovementMethod;
+import android.text.util.Linkify;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -27,6 +31,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class LoginActivity extends AbstractAsyncActivity {
@@ -158,6 +163,8 @@ public class LoginActivity extends AbstractAsyncActivity {
 		protected void onPostExecute(Plan result) {
 //			dismissProgressDialog();
 //			displayResponse(result);
+            dismissProgressDialog();
+            if(result != null){
 
             if(result.getId() == 0){
                 onCancelled();
@@ -166,7 +173,28 @@ public class LoginActivity extends AbstractAsyncActivity {
                 Intent intent = new Intent(LoginActivity.this, SelectActivity.class);
                 intent.putExtra("plan", result);
                 startActivity(intent);
+            }}
+            else{
+
+                final TextView message = new TextView(LoginActivity.this);
+                // i.e.: R.string.dialog_message =>
+                // "Test this dialog following the link to dtmilano.blogspot.com"
+                final SpannableString s =
+                        new SpannableString((LoginActivity.this.getText(R.string.no_plan_error)) +"\n"+ (LoginActivity.this.getText((R.string.base_uri))));
+                Linkify.addLinks(s, Linkify.WEB_URLS);
+                message.setText(s);
+                message.setMovementMethod(LinkMovementMethod.getInstance());
+
+                new AlertDialog.Builder(LoginActivity.this)
+                        .setTitle("Error")
+                        .setCancelable(true)
+                        .setIcon(android.R.drawable.ic_dialog_info)
+                        .setView(message)
+                        .create().show();
             }
+
+
+
 		}
 
         @Override

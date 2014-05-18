@@ -6,7 +6,7 @@
     <string name="action_settings">Settings</string>
     <string name="login">LOGIN</string>
     <string name="submit">Submit</string>
-    <string name="base_uri">http://192.168.1.122/benefits</string>
+    <string name="base_uri"><a ref= "http://192.168.20.26/benefits"/>http://192.168.20.26/benefits</string>
     <string name="title_activity_select">selectActivity</string>
     <string name="title_select">Seleccione que desea ver</string>
     <string name="diet">Dieta</string>
@@ -26,5 +26,6 @@
     <string name="title_activity_meal_details">MealDetailsActivity</string>
     <string name="title_activity_training_day_details">TrainingDayDetailsActivity</string>
     <string name="title_activity_exercise_group_details_activity">ExerciseGroupDetailsActivity</string>
+    <string name="no_plan_error">No tiene asignado un plan o su usuario no existe, por favor visite </string>
 
 </resources>
