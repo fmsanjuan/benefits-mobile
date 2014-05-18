@@ -199,7 +199,21 @@ public class LoginActivity extends AbstractAsyncActivity {
 
         @Override
         protected void onCancelled() {
-            Toast.makeText(LoginActivity.this, "Tarea cancelada!", Toast.LENGTH_SHORT).show();
+            final TextView message = new TextView(LoginActivity.this);
+            // i.e.: R.string.dialog_message =>
+            // "Test this dialog following the link to dtmilano.blogspot.com"
+            final SpannableString s =
+                    new SpannableString((LoginActivity.this.getText(R.string.no_plan_error)) +"\n"+ (LoginActivity.this.getText((R.string.base_uri))));
+            Linkify.addLinks(s, Linkify.WEB_URLS);
+            message.setText(s);
+            message.setMovementMethod(LinkMovementMethod.getInstance());
+
+            new AlertDialog.Builder(LoginActivity.this)
+                    .setTitle("Error")
+                    .setCancelable(true)
+                    .setIcon(android.R.drawable.ic_dialog_info)
+                    .setView(message)
+                    .create().show();
         }
 
 	}
