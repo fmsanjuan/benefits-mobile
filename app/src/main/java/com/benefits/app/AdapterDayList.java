@@ -26,7 +26,27 @@ public class AdapterDayList extends BaseAdapter {
         View view = inflater.inflate(R.layout.adapter_days, null,
                 true);
         TextView textView =(TextView)view.findViewById(R.id.day);
-        textView.setText(dayList.elementAt(position).getName().toString());
+        if(dayList.elementAt(position).getName().toString().equals("MONDAY")){
+            textView.setText(R.string.Monday);
+        }
+        if(dayList.elementAt(position).getName().toString().equals("TUESDAY")){
+            textView.setText(R.string.Tuesday);
+        }
+        if(dayList.elementAt(position).getName().toString().equals("WEDNESDAY")){
+            textView.setText(R.string.Wednesday);
+        }
+        if(dayList.elementAt(position).getName().toString().equals("THURSDAY")){
+            textView.setText(R.string.Thursday);
+        }
+        if(dayList.elementAt(position).getName().toString().equals("FRIDAY")){
+            textView.setText(R.string.Friday);
+        }
+        if(dayList.elementAt(position).getName().toString().equals("SATURDAY")){
+            textView.setText(R.string.Saturday);
+        }
+        if(dayList.elementAt(position).getName().toString().equals("SUNDAY")){
+            textView.setText(R.string.Sunday);
+        }
         return view;
     }
 

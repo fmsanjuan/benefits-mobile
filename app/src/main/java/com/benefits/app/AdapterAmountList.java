@@ -11,6 +11,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.Vector;
 
 
@@ -36,9 +38,19 @@ public class AdapterAmountList extends BaseAdapter {
         TextView food =(TextView)view.findViewById(R.id.food);
         food.setText(amounts.elementAt(position).getFood().getName());
         TextView description =(TextView)view.findViewById(R.id.descriptionFood);
-        description.setText(amounts.elementAt(position).getFood().getDescription());
+        try {
+            byte spbyte[] = amounts.elementAt(position).getFood().getDescription().getBytes("UTF-8");
+            String str = new String( spbyte,"UTF-8");
+            description.setText(str);
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
         TextView quantityandmeasure =(TextView)view.findViewById(R.id.quantityandmeasure);
-        quantityandmeasure.setText(amounts.elementAt(position).getQuantity()+" "+amounts.elementAt(position).getMeasure());
+        try {
+            quantityandmeasure.setText(amounts.elementAt(position).getQuantity()+" "+ URLEncoder.encode((amounts.elementAt(position).getMeasure()), "UTF-8"));
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
         return view;
     }
 

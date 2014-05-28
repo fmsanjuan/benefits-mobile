@@ -27,5 +27,19 @@
     <string name="title_activity_training_day_details">TrainingDayDetailsActivity</string>
     <string name="title_activity_exercise_group_details_activity">ExerciseGroupDetailsActivity</string>
     <string name="no_plan_error">No tiene asignado un plan o su usuario no existe, por favor visite </string>
+    <string name="Monday">Monday</string>
+    <string name="Tuesday">Tuesday</string>
+    <string name="Wednesday">Wednesday</string>
+    <string name="Thursday">Thursday</string>
+    <string name="Friday">Friday</string>
+    <string name="Saturday">Saturday</string>
+    <string name="Sunday">Sunday</string>
+
+    <string name="Breakfast">Breakfast</string>
+    <string name="MidMorning">Mid Morning</string>
+    <string name="Lunch">Lunch</string>
+    <string name="TeaTime">Tea Time</string>
+    <string name="Dinner">Dinner</string>
+
 
 </resources>

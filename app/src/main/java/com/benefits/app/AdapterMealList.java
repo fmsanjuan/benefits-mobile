@@ -26,7 +26,21 @@ public class AdapterMealList extends BaseAdapter {
         View view = inflater.inflate(R.layout.adapter_meals, null,
                 true);
         TextView textView =(TextView)view.findViewById(R.id.meal);
-        textView.setText(mealList.elementAt(position).getName().toString());
+        if(mealList.elementAt(position).getName().toString().equals("BREAKFAST")){
+            textView.setText(R.string.Breakfast);
+        }
+        if(mealList.elementAt(position).getName().toString().equals("MID_MORNING")){
+            textView.setText(R.string.MidMorning);
+        }
+        if(mealList.elementAt(position).getName().toString().equals("LUNCH")){
+            textView.setText(R.string.Lunch);
+        }
+        if(mealList.elementAt(position).getName().toString().equals("TEA_TIME")){
+            textView.setText(R.string.TeaTime);
+        }
+        if(mealList.elementAt(position).getName().toString().equals("DINNER")){
+            textView.setText(R.string.Dinner);
+        }
         return view;
     }
 

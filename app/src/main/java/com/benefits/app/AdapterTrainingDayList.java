@@ -26,7 +26,27 @@ public class AdapterTrainingDayList extends BaseAdapter {
         View view = inflater.inflate(R.layout.adapter_days, null,
                 true);
         TextView textView =(TextView)view.findViewById(R.id.day);
-        textView.setText(trainingDayList.elementAt(position).getName().toString());
+        if(trainingDayList.elementAt(position).getName().toString().equals("MONDAY")){
+            textView.setText(R.string.Monday);
+        }
+        if(trainingDayList.elementAt(position).getName().toString().equals("TUESDAY")){
+            textView.setText(R.string.Tuesday);
+        }
+        if(trainingDayList.elementAt(position).getName().toString().equals("WEDNESDAY")){
+            textView.setText(R.string.Wednesday);
+        }
+        if(trainingDayList.elementAt(position).getName().toString().equals("THURSDAY")){
+            textView.setText(R.string.Thursday);
+        }
+        if(trainingDayList.elementAt(position).getName().toString().equals("FRIDAY")){
+            textView.setText(R.string.Friday);
+        }
+        if(trainingDayList.elementAt(position).getName().toString().equals("SATURDAY")){
+            textView.setText(R.string.Saturday);
+        }
+        if(trainingDayList.elementAt(position).getName().toString().equals("SUNDAY")){
+            textView.setText(R.string.Sunday);
+        }
         return view;
     }
 
