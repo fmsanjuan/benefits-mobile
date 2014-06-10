@@ -10,7 +10,9 @@
 
 package com.benefits.app;
 
-public abstract class DomainEntity {
+import java.io.Serializable;
+
+public abstract class DomainEntity implements Serializable{
 
 	// Constructors -----------------------------------------------------------
 

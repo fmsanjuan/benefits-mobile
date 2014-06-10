@@ -1,5 +1,10 @@
 package com.benefits.app;
 
+import java.io.IOException;
+import java.security.KeyStore;
+import java.security.KeyStoreException;
+import java.security.NoSuchAlgorithmException;
+import java.security.cert.CertificateException;
 import java.util.Collections;
 
 import org.springframework.http.HttpAuthentication;
@@ -33,6 +38,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import javax.net.ssl.SSLSocketFactory;
 
 public class LoginActivity extends AbstractAsyncActivity {
 
@@ -125,6 +132,9 @@ public class LoginActivity extends AbstractAsyncActivity {
 
 			// Populate the HTTP Basic Authentitcation header with the username
 			// and password
+
+            _FakeX509TrustManager.allowAllSSL();
+
 			HttpAuthentication authHeader = new HttpBasicAuthentication(
 					username, password);
 

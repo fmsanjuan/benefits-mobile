@@ -12,9 +12,9 @@ import java.util.Vector;
 
 public class AdapterMealList extends BaseAdapter {
     private final Activity activity;
-    private final Vector<Meal> mealList;
+    private final Vector<Meals> mealList;
 
-    public AdapterMealList(Activity activity, Vector<Meal> mealList) {
+    public AdapterMealList(Activity activity, Vector<Meals> mealList) {
         super();
         this.activity = activity;
         this.mealList = mealList;
@@ -26,19 +26,19 @@ public class AdapterMealList extends BaseAdapter {
         View view = inflater.inflate(R.layout.adapter_meals, null,
                 true);
         TextView textView =(TextView)view.findViewById(R.id.meal);
-        if(mealList.elementAt(position).getName().toString().equals("BREAKFAST")){
+        if(mealList.elementAt(position).toString().equals("BREAKFAST")){
             textView.setText(R.string.Breakfast);
         }
-        if(mealList.elementAt(position).getName().toString().equals("MID_MORNING")){
+        if(mealList.elementAt(position).toString().equals("MID_MORNING")){
             textView.setText(R.string.MidMorning);
         }
-        if(mealList.elementAt(position).getName().toString().equals("LUNCH")){
+        if(mealList.elementAt(position).toString().equals("LUNCH")){
             textView.setText(R.string.Lunch);
         }
-        if(mealList.elementAt(position).getName().toString().equals("TEA_TIME")){
+        if(mealList.elementAt(position).toString().equals("TEA_TIME")){
             textView.setText(R.string.TeaTime);
         }
-        if(mealList.elementAt(position).getName().toString().equals("DINNER")){
+        if(mealList.elementAt(position).toString().equals("DINNER")){
             textView.setText(R.string.Dinner);
         }
         return view;
