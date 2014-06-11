@@ -36,10 +36,16 @@ import org.springframework.http.HttpAuthentication;
 import org.springframework.http.HttpBasicAuthentication;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpRequest;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.client.support.HttpRequestWrapper;
+import org.springframework.http.converter.FormHttpMessageConverter;
+import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.http.converter.json.MappingJacksonHttpMessageConverter;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.ResourceAccessException;
 import org.springframework.web.client.RestTemplate;
@@ -48,6 +54,7 @@ import org.springframework.web.client.RestTemplate;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Vector;
 
@@ -103,7 +110,7 @@ public class DayDetailsActivity extends ListActivity {
     // ***************************************
     // Private classes
     // ***************************************
-    private class FetchSecuredResourceTask extends AsyncTask<Integer, Void, Collection<String>> {
+    private class FetchSecuredResourceTask extends AsyncTask<Integer, Void, Collection<Meals>> {
 
         Context mContext = null;
         final String url;
@@ -117,61 +124,72 @@ public class DayDetailsActivity extends ListActivity {
             mContext = context;
             this.dayId = dayId;
             url = getString(R.string.base_uri)
-                    + "/rest/listmeals.do?dayId=" + dayId;
+                    + "/rest/listmeals.do";
         }
 
         @Override
-        protected Collection<String> doInBackground(Integer... arg0) {
+        protected Collection<Meals> doInBackground(Integer... arg0) {
             Collection<Meals> c = new ArrayList<Meals>();
             try {
 
                 _FakeX509TrustManager.allowAllSSL();
 
-
+                HttpAuthentication authHeader = new HttpBasicAuthentication(
+                        "customer1", "customer1");
 
                 HttpHeaders requestHeaders = new HttpHeaders();
+                requestHeaders.setAuthorization(authHeader);
                 requestHeaders.setAccept(Collections
                         .singletonList(MediaType.APPLICATION_JSON));
-                requestHeaders.set("dayId", dayId);
+                requestHeaders.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
+
+                MultiValueMap<String, String> map = new LinkedMultiValueMap<String, String>();
+                map.add("dayId", dayId);
+
+                org.springframework.http.HttpEntity<MultiValueMap<String, String>> request =
+                        new org.springframework.http.HttpEntity<MultiValueMap<String, String>>(map, requestHeaders);
 
                 // Create a new RestTemplate instance
                 RestTemplate restTemplate = new RestTemplate();
-                MappingJacksonHttpMessageConverter converter = new MappingJacksonHttpMessageConverter();
-                restTemplate.getMessageConverters().add(converter);
-
+                List<HttpMessageConverter<?>> messageConverters = new ArrayList<HttpMessageConverter<?>>();
+                messageConverters.add(new MappingJacksonHttpMessageConverter());
+                messageConverters.add(new FormHttpMessageConverter());
+                restTemplate.setMessageConverters(messageConverters);
 
                 try {
                     // Make the network request
                     Log.d(TAG, url);
-                    ResponseEntity<Collection<String>> response = restTemplate.exchange(url,
-                            HttpMethod.POST, new org.springframework.http.HttpEntity<Object>(requestHeaders),
-                            (Class<Collection<String>>)(Class<?>)Collection.class);
+
+                    ResponseEntity<Collection<Meals>> response = restTemplate.exchange(url,
+                            HttpMethod.POST, request,
+                            (Class<Collection<Meals>>)(Class<?>)Collection.class);
+
                     return response.getBody();
 
                 } catch (HttpMessageNotReadableException e) {
                     Log.e(TAG, e.getLocalizedMessage(), e);
-                    return new ArrayList<String>();
+                    return new ArrayList<Meals>();
                 } catch (HttpClientErrorException e) {
                     Log.e(TAG, e.getLocalizedMessage(), e);
-                    return new ArrayList<String>();
+                    return new ArrayList<Meals>();
 
                 } catch (ResourceAccessException e) {
                     Log.e(TAG, e.getLocalizedMessage(), e);
-                    return new ArrayList<String>();
+                    return new ArrayList<Meals>();
 
                 }
 
             } catch (Exception e) {
                 Log.e("ClientServerDemo", "Error:", e);
                 exception = e;
-                return new ArrayList<String>();
+                return new ArrayList<Meals>();
             }
 
 
      }
 
         @Override
-        protected void onPostExecute(Collection<String> result) {
+        protected void onPostExecute(Collection<Meals> result) {
 
             if (exception != null) {
                 Toast.makeText(mContext, exception.getMessage(),
@@ -179,7 +197,7 @@ public class DayDetailsActivity extends ListActivity {
             }
 
 
-            for (String i : result) {
+            for (Meals i : result) {
                 if (!meals.contains(i)) {
                     if(i.equals("BREAKFAST")){
                         meals.add(Meals.BREAKFAST);}
