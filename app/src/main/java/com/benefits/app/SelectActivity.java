@@ -40,6 +40,8 @@ public class SelectActivity extends Activity {
                 //Toast.makeText(SelectActivity.this, "Diet!", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(SelectActivity.this, DietActivity.class);
                 intent.putExtra("diet", plan.getDiet());
+                intent.putExtra("user", getIntent().getExtras().getString("user"));
+                intent.putExtra("password", getIntent().getExtras().getString("password"));
                 startActivity(intent);
             }
         });

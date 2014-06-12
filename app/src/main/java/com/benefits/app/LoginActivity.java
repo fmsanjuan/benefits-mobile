@@ -182,6 +182,8 @@ public class LoginActivity extends AbstractAsyncActivity {
             else {
                 Intent intent = new Intent(LoginActivity.this, SelectActivity.class);
                 intent.putExtra("plan", result);
+                intent.putExtra("user", username);
+                intent.putExtra("password", password);
                 startActivity(intent);
             }}
             else{

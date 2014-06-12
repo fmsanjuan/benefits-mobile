@@ -67,6 +67,8 @@ public class DayDetailsActivity extends ListActivity {
 
     private List<Meal> mealList = new ArrayList<Meal>();
     Day day;
+    String user;
+    String pass;
     private Button backToDay;
     private Collection<Meals> meals = new ArrayList<Meals>();
 
@@ -76,7 +78,9 @@ public class DayDetailsActivity extends ListActivity {
         setContentView(R.layout.activity_day_details);
 
         day = (Day) getIntent().getExtras().get("day");
-        FetchSecuredResourceTask f = new FetchSecuredResourceTask(this, String.valueOf(day.getId()));
+        user = getIntent().getExtras().getString("user");
+        pass = getIntent().getExtras().getString("password");
+        FetchSecuredResourceTask f = new FetchSecuredResourceTask(this, String.valueOf(day.getId()), user, pass);
         f.execute();
 
 
@@ -85,11 +89,22 @@ public class DayDetailsActivity extends ListActivity {
             public void onItemClick(AdapterView parent, View v, int position,
                                     long id) {
 
-                Meal entry = (Meal) parent.getItemAtPosition(position);
+                Meals entry = (Meals) parent.getItemAtPosition(position);
                 Intent i = new Intent(DayDetailsActivity.this,
                         MealDetailsActivity.class);
-                i.putExtra("meal", entry.getName());
+                if(entry.equals("Breakfast")){
+                i.putExtra("meal", "BREAKFAST");}
+                if(entry.equals("Mid Morning")){
+                    i.putExtra("meal", "MID_MORNING");}
+                if(entry.equals("Lunch")){
+                    i.putExtra("meal", "LUNCH");}
+                if(entry.equals("Tea Time")){
+                    i.putExtra("meal", "TEA_TIME");}
+                if(entry.equals("Dinner")){
+                    i.putExtra("meal", "DINNER");}
                 i.putExtra("dayId", day.getId());
+                i.putExtra("user", getIntent().getExtras().getString("user") );
+                i.putExtra("password", getIntent().getExtras().getString("password") );
                 startActivity(i);
 
             };
@@ -110,32 +125,36 @@ public class DayDetailsActivity extends ListActivity {
     // ***************************************
     // Private classes
     // ***************************************
-    private class FetchSecuredResourceTask extends AsyncTask<Integer, Void, Collection<Meals>> {
+    private class FetchSecuredResourceTask extends AsyncTask<Integer, Void, Collection<String>> {
 
         Context mContext = null;
         final String url;
 
+        String user;
+        String pass;
         String dayId;
         Collection<Meals> mealsOfDay = new ArrayList<Meals>();
 
         Exception exception = null;
 
-        FetchSecuredResourceTask(Context context, String dayId) {
+        FetchSecuredResourceTask(Context context, String dayId, String user, String pass) {
             mContext = context;
             this.dayId = dayId;
+            this.user = user;
+            this.pass = pass;
             url = getString(R.string.base_uri)
                     + "/rest/listmeals.do";
         }
 
         @Override
-        protected Collection<Meals> doInBackground(Integer... arg0) {
+        protected Collection<String> doInBackground(Integer... arg0) {
             Collection<Meals> c = new ArrayList<Meals>();
             try {
 
                 _FakeX509TrustManager.allowAllSSL();
 
                 HttpAuthentication authHeader = new HttpBasicAuthentication(
-                        "customer1", "customer1");
+                        user, pass);
 
                 HttpHeaders requestHeaders = new HttpHeaders();
                 requestHeaders.setAuthorization(authHeader);
@@ -160,36 +179,36 @@ public class DayDetailsActivity extends ListActivity {
                     // Make the network request
                     Log.d(TAG, url);
 
-                    ResponseEntity<Collection<Meals>> response = restTemplate.exchange(url,
+                    ResponseEntity<Collection<String>> response = restTemplate.exchange(url,
                             HttpMethod.POST, request,
-                            (Class<Collection<Meals>>)(Class<?>)Collection.class);
+                            (Class<Collection<String>>)(Class<?>)Collection.class);
 
                     return response.getBody();
 
                 } catch (HttpMessageNotReadableException e) {
                     Log.e(TAG, e.getLocalizedMessage(), e);
-                    return new ArrayList<Meals>();
+                    return new ArrayList<String>();
                 } catch (HttpClientErrorException e) {
                     Log.e(TAG, e.getLocalizedMessage(), e);
-                    return new ArrayList<Meals>();
+                    return new ArrayList<String>();
 
                 } catch (ResourceAccessException e) {
                     Log.e(TAG, e.getLocalizedMessage(), e);
-                    return new ArrayList<Meals>();
+                    return new ArrayList<String>();
 
                 }
 
             } catch (Exception e) {
                 Log.e("ClientServerDemo", "Error:", e);
                 exception = e;
-                return new ArrayList<Meals>();
+                return new ArrayList<String>();
             }
 
 
      }
 
         @Override
-        protected void onPostExecute(Collection<Meals> result) {
+        protected void onPostExecute(Collection<String> result) {
 
             if (exception != null) {
                 Toast.makeText(mContext, exception.getMessage(),
@@ -197,7 +216,7 @@ public class DayDetailsActivity extends ListActivity {
             }
 
 
-            for (Meals i : result) {
+            for (String i : result) {
                 if (!meals.contains(i)) {
                     if(i.equals("BREAKFAST")){
                         meals.add(Meals.BREAKFAST);}

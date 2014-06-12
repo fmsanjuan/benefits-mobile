@@ -35,6 +35,8 @@ public class DietActivity extends ListActivity {
                 Intent i = new Intent(DietActivity.this,
                         DayDetailsActivity.class);
                 i.putExtra("day", entry);
+                i.putExtra("user", getIntent().getExtras().getString("user"));
+                i.putExtra("password", getIntent().getExtras().getString("password"));
                 startActivity(i);
 
             };
