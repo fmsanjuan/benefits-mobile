@@ -2,6 +2,7 @@ package com.benefits.app;
 
 import android.app.AlertDialog;
 import android.app.ListActivity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -146,6 +147,17 @@ public class DayDetailsActivity extends ListActivity {
                     + "/rest/listmeals.do";
         }
 
+        ProgressDialog progressDialog = new ProgressDialog(DayDetailsActivity.this);
+
+
+        @Override
+        protected void onPreExecute() {
+
+            super.onPreExecute();
+            progressDialog.setMessage("Loading...");
+            progressDialog.show();
+        }
+
         @Override
         protected Collection<String> doInBackground(Integer... arg0) {
             Collection<Meals> c = new ArrayList<Meals>();
@@ -238,6 +250,7 @@ public class DayDetailsActivity extends ListActivity {
 
             Vector<Meals> mealListToIndex = new Vector<Meals>(meals);
             setListAdapter(new AdapterMealList(DayDetailsActivity.this, mealListToIndex));
+            progressDialog.dismiss();
 
         }
 
