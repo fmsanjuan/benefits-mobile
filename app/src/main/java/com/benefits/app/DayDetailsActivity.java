@@ -93,17 +93,17 @@ public class DayDetailsActivity extends ListActivity {
                 Meals entry = (Meals) parent.getItemAtPosition(position);
                 Intent i = new Intent(DayDetailsActivity.this,
                         MealDetailsActivity.class);
-                if(entry.equals("Breakfast")){
-                i.putExtra("meal", "BREAKFAST");}
-                if(entry.equals("Mid Morning")){
-                    i.putExtra("meal", "MID_MORNING");}
-                if(entry.equals("Lunch")){
-                    i.putExtra("meal", "LUNCH");}
-                if(entry.equals("Tea Time")){
-                    i.putExtra("meal", "TEA_TIME");}
-                if(entry.equals("Dinner")){
-                    i.putExtra("meal", "DINNER");}
-                i.putExtra("dayId", day.getId());
+                if(entry.toString()=="BREAKFAST"){
+                i.putExtra("mealName", "BREAKFAST");}
+                if(entry.toString()=="MID_MORNING"){
+                    i.putExtra("mealName", "MID_MORNING");}
+                if(entry.toString()=="LUNCH"){
+                    i.putExtra("mealName", "LUNCH");}
+                if(entry.toString()=="TEA_TIME"){
+                    i.putExtra("mealName", "TEA_TIME");}
+                if(entry.toString()=="DINNER"){
+                    i.putExtra("mealName", "DINNER");}
+                i.putExtra("dayId", String.valueOf(day.getId()));
                 i.putExtra("user", getIntent().getExtras().getString("user") );
                 i.putExtra("password", getIntent().getExtras().getString("password") );
                 startActivity(i);
