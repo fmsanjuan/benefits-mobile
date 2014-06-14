@@ -14,15 +14,15 @@
     <string name="training">Entrenamiento</string>
     <string name="title_activity_diet">DietActivity</string>
     <string name="title_activity_training">TrainingActivity</string>
-    <string name="days">Dias</string>
+    <string name="days">Días</string>
     <string name="exercise">Exercise</string>
     <string name="exerciseGroup">Grupo de ejercicios</string>
-    <string name="noDays">No hay dias que mostrar</string>
-    <string name="meals">Commidas</string>
+    <string name="noDays">No hay días que mostrar</string>
+    <string name="meals">Comidas</string>
     <string name="noMeals">No hay comidas que mostrar</string>
     <string name="amounts">Cantidades de comidas</string>
     <string name="noAmounts">No hay cantidades que mostrar</string>
-    <string name="back">Atras</string>
+    <string name="back">Atrás</string>
     <string name="title_activity_day_details">DayDetailsActivity</string>
     <string name="title_activity_meal_details">MealDetailsActivity</string>
     <string name="title_activity_training_day_details">TrainingDayDetailsActivity</string>
@@ -30,10 +30,10 @@
     <string name="no_plan_error">No tiene asignado un plan o su usuario no existe, por favor visite </string>
     <string name="Monday">Lunes</string>
     <string name="Tuesday">Martes</string>
-    <string name="Wednesday">Miercoles</string>
+    <string name="Wednesday">Miércoles</string>
     <string name="Thursday">Jueves</string>
     <string name="Friday">Viernes</string>
-    <string name="Saturday">Sabado</string>
+    <string name="Saturday">Sábado</string>
     <string name="Sunday">Domingo</string>
 
     <string name="Breakfast">Desayuno</string>
