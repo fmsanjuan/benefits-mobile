@@ -134,6 +134,7 @@ public class MealDetailsActivity extends ListActivity{
                 requestHeaders.setAuthorization(authHeader);
                 requestHeaders.setAccept(Collections
                         .singletonList(MediaType.APPLICATION_JSON));
+                requestHeaders.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
 
                 MultiValueMap<String, String> map = new LinkedMultiValueMap<String, String>();
                 map.add("dayId", dayId);
@@ -144,8 +145,10 @@ public class MealDetailsActivity extends ListActivity{
 
                 // Create a new RestTemplate instance
                 RestTemplate restTemplate = new RestTemplate();
-                MappingJacksonHttpMessageConverter converter = new MappingJacksonHttpMessageConverter();
-                restTemplate.getMessageConverters().add(converter);
+                List<HttpMessageConverter<?>> messageConverters = new ArrayList<HttpMessageConverter<?>>();
+                messageConverters.add(new MappingJacksonHttpMessageConverter());
+                messageConverters.add(new FormHttpMessageConverter());
+                restTemplate.setMessageConverters(messageConverters);
 
                 try {
                     // Make the network request

@@ -217,7 +217,7 @@ public class DayDetailsActivity extends ListActivity {
             }
 
 
-     }
+        }
 
         @Override
         protected void onPostExecute(Collection<String> result) {

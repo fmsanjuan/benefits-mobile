@@ -7,6 +7,7 @@
     <string name="login">LOGIN</string>
     <string name="submit">Submit</string>
     <string name="base_uri"><a ref= "https://benefits.mpaas.io"/>https://benefits.mpaas.io</string>
+    <!--<string name="base_uri"><a ref= "http://192.168.1.89:8080/benefits"/>http://192.168.1.89:8080/benefits</string>-->
     <string name="title_activity_select">selectActivity</string>
     <string name="title_select">Seleccione que desea ver</string>
     <string name="diet">Dieta</string>
