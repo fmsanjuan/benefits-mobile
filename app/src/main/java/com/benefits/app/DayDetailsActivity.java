@@ -154,7 +154,7 @@ public class DayDetailsActivity extends ListActivity {
         protected void onPreExecute() {
 
             super.onPreExecute();
-            progressDialog.setMessage("Loading...");
+            progressDialog.setMessage("Cargando...");
             progressDialog.show();
         }
 
