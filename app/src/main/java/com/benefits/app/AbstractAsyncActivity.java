@@ -42,7 +42,7 @@ public abstract class AbstractAsyncActivity extends Activity {
 	// Public methods
 	// ***************************************
 	public void showLoadingProgressDialog() {
-		this.showProgressDialog("Cargando, por favor espere...");
+		this.showProgressDialog(getString(R.string.loading));
 	}
 
 	public void showProgressDialog(CharSequence message) {

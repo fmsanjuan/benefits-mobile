@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Benefits</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="login">LOGIN</string>
+    <string name="submit">Submit</string>
+    <string name="base_uri"><a ref= "https://benefits.mpaas.io"/>https://benefits.mpaas.io</string>
+    <!--<string name="base_uri"><a ref= "http://192.168.1.89:8080/benefits"/>http://192.168.1.89:8080/benefits</string>-->
+    <string name="title_activity_select">selectActivity</string>
+    <string name="title_select">Please select</string>
+    <string name="diet">Diet</string>
+    <string name="training">Training</string>
+    <string name="title_activity_diet">DietActivity</string>
+    <string name="title_activity_training">TrainingActivity</string>
+    <string name="days">Days</string>
+    <string name="exercise">Exercise</string>
+    <string name="exerciseGroup">ExerciseGroup</string>
+    <string name="noDays">There is no days to show</string>
+    <string name="meals">Meals</string>
+    <string name="noMeals">There is no meals to show</string>
+    <string name="amounts">Food and Amounts</string>
+    <string name="noAmounts">There is no amounts to show</string>
+    <string name="back">Back</string>
+    <string name="title_activity_day_details">DayDetailsActivity</string>
+    <string name="title_activity_meal_details">MealDetailsActivity</string>
+    <string name="title_activity_training_day_details">TrainingDayDetailsActivity</string>
+    <string name="title_activity_exercise_group_details_activity">ExerciseGroupDetailsActivity</string>
+    <string name="no_plan_error">You do not have a plan assigned or your user does not exist, please visit </string>
+    <string name="Monday">Monday</string>
+    <string name="Tuesday">Tuesday</string>
+    <string name="Wednesday">Wednesday</string>
+    <string name="Thursday">Thursday</string>
+    <string name="Friday">Friday</string>
+    <string name="Saturday">Saturday</string>
+    <string name="Sunday">Sunday</string>
+
+    <string name="Breakfast">Breakfast</string>
+    <string name="MidMorning">Mid Morning</string>
+    <string name="Lunch">Lunch</string>
+    <string name="TeaTime">Tea Time</string>
+    <string name="Dinner">Dinner</string>
+
+    <string name="loading">Loading, please wait</string>
+    <string name="loadingdots">Loading...</string>
+
+</resources>

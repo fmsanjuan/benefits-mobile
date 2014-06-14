@@ -117,7 +117,7 @@ public class MealDetailsActivity extends ListActivity{
         protected void onPreExecute() {
 
             super.onPreExecute();
-            progressDialog.setMessage("Cargando...");
+            progressDialog.setMessage(getString(R.string.loadingdots));
             progressDialog.show();
         }
 

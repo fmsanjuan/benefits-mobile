@@ -42,5 +42,7 @@
     <string name="TeaTime">Merienda</string>
     <string name="Dinner">Cena</string>
 
+    <string name="loading">Cargando, por favor espere...</string>
+    <string name="loadingdots">Cargando...</string>
 
 </resources>
