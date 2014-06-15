@@ -6,7 +6,7 @@
     <string name="action_settings">Settings</string>
     <string name="login">Acceso</string>
     <string name="submit">Acceder</string>
-    <string name="base_uri"><a ref= "https://benefits.mpaas.io"/>https://benefits.mpaas.io</string>
+    <string name="base_uri"><a ref= "https://benefits.cloud.hostnet.nl"/>https://benefits.cloud.hostnet.nl</string>
     <!--<string name="base_uri"><a ref= "http://192.168.1.89:8080/benefits"/>http://192.168.1.89:8080/benefits</string>-->
     <string name="title_activity_select">Seleccionar</string>
     <string name="title_select">Seleccione que desea ver</string>
